@@ -166,8 +166,8 @@ N           1411              735               offen
 KONJ      458                 18                geschlossen
 PRAEP     455                 37                geschlossen</code></pre>
 </div>
-<div id="vektoren-anglegen" class="section level3">
-<h3>Vektoren anglegen</h3>
+<div id="vektoren-anglegendf" class="section level3">
+<h3>Vektoren anglegendf</h3>
 <pre class="r"><code>Wortart &lt;- c('ADJ', 'ADV', 'N', 'KONJ', 'PRAEP')
 Wortart</code></pre>
 <pre><code>## [1] &quot;ADJ&quot;   &quot;ADV&quot;   &quot;N&quot;     &quot;KONJ&quot;  &quot;PRAEP&quot;</code></pre>
@@ -251,10 +251,10 @@ df2</code></pre>
 <h2>Hausaufgabe</h2>
 <ul>
 <li><p>Daten herunterladen und im richtigen Verzeichnis ablegen: <a href="http://tinyurl.com/r-Session03-data" class="uri">http://tinyurl.com/r-Session03-data</a></p></li>
-<li><p>Daten als ein DataFrame einlesen</p></li>
-<li><p>Durchschnittliche PausenlÃ¤nge bei MÃ¤nnern berechnen</p></li>
-<li><p>Die kÃ¼rzeste und die lÃ¤nste Pause identifizieren (Fallnummer angeben)</p></li>
-<li><p>ÃberprÃ¼fen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()</p></li>
+<li><p>Daten als ein DataFrame einlesen &gt;df2 &lt;-read.table (“U:/Eigene Dateien/R-Course-2016/data/03-1_aeh(m).txt”,header=T, )</p></li>
+<li><p>Durchschnittliche PausenlÃ¤nge bei Maennern berechnen &gt; mean(subset(df2<span class="math inline">\(LAENGE, df2\)</span>GESCHLECHT ==“maennlich”)) [1] 901.5803</p></li>
+<li><p>Die kuerzeste und die laengste Pause identifizieren (Fallnummer angeben)</p></li>
+<li><p>Ueberpruefen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()</p></li>
 </ul>
 </div>
 </div>

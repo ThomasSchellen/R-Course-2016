@@ -113,11 +113,19 @@ df1[df1$Klasse == 'offen', ][df1$TokenFrequenz < 500, ]
 
 
 * Die kuerzeste und die laengste Pause identifizieren (Fallnummer angeben)
+> summary (df2[5])
+> which.max (df2$LAENGE)
+[1] 204
+> which.min (df2$LAENGE)
+[1] 500
 
 * Ueberpruefen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()
 
 
+> table (subset(df2$FILLER =="stille", df2$GESCHLECHT == "weiblich"))
 
+FALSE  TRUE 
+  331   171 
 
-
+..True für Frauen
 
