@@ -43,7 +43,7 @@ seq(1, 11, 2) # Kommentar
     PRAEP     455		          37		        geschlossen
 
 
-###Vektoren anglegen
+###Vektoren anglegendf
 ```{r echo = TRUE}
 Wortart <- c('ADJ', 'ADV', 'N', 'KONJ', 'PRAEP')
 Wortart
@@ -105,9 +105,19 @@ df1[df1$Klasse == 'offen', ][df1$TokenFrequenz < 500, ]
   http://tinyurl.com/r-Session03-data
 
 * Daten als ein DataFrame einlesen
+>df2 <-read.table ("U:/Eigene Dateien/R-Course-2016/data/03-1_aeh(m).txt",header=T, )
 
-* Durchschnittliche Pausenlänge bei Männern berechnen
+* Durchschnittliche Pausenlänge bei Maennern berechnen
+> mean(subset(df2$LAENGE, df2$GESCHLECHT =="maennlich"))
+[1] 901.5803
 
-* Die kürzeste und die länste Pause identifizieren (Fallnummer angeben)
 
-* Überprüfen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()
+* Die kuerzeste und die laengste Pause identifizieren (Fallnummer angeben)
+
+* Ueberpruefen, ob es stimmt, dass Frauen im Dialog eher Schweigepausen machen. table()
+
+
+
+
+
+
