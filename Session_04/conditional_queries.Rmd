@@ -1,14 +1,44 @@
-
 #Bedingte Abfragen
+
+```{r}
+df <- read.csv ('../data/pos_table.csv')
+print(df, row.names = F)
+```
+
+## Dataframe-Elemente ansprechen
+```{r}
+df$Klasse #Spalte auswaehlen
+df [,2]   #Spalte auswaehlen
+df[1,]    #Zeile auswaehlen
+df[1, 1]  #Zeile auswaehlen
+
+```
+
+##Bedingte Abfragen
+
+```{r}
+v1 <- 1:10
+v1[c(T, F)]  #nur ungerade Werte werden angezeigt bei knit html
+
+
+```
+
+```{r}
+v.of.classes <- df$Klasse == 'offen'
+df[v.of.classes, ]                          #bedingte abfrage
+df[v.of.classes, ][df$Typenfrequenz > 150, ]
+
+```
+
 
 
 
 
 ## Aufgaben für selbstständige Arbeit
-* auf der Seite http://swirlstats.com/ das Paket `swirl` kennenlernen
+- auf der Seite http://swirlstats.com/ das Paket `swirl` kennenlernen
 
-* den Swirl-Kurs "R Programmin by swirl team" anfangen
+- den Swirl-Kurs "R Programmin by swirl team" anfangen
 
-* die Dokumentation für das Paket `readr` durchlesen: https://github.com/tidyverse/readr
+- die Dokumentation für das Paket `readr` durchlesen: https://github.com/tidyverse/readr
 
 
