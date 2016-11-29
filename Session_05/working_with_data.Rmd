@@ -83,14 +83,17 @@ library(XML)
 
 tokens <- vector('character')
 types <- vector('character')
+wortart <- vector("character")
+genus <- vector("character")
 
 xmlEventParse(
-  "../data/t_990505_47.xml", 
+  "U:/Eigene Dateien/R-Course-2016/data/t_990505_47.xml", 
   handlers = list(
     't' = function(name, attr) {
       tokens <<- c(tokens, attr['word'])
       types <<- c(types, attr['lemma'])
-      ## morphology
+      wortart <<- c(wortart, attr["pos"])
+      genus <<- c(genus, attr["morph"])
       }
     ),
   addContext = FALSE
@@ -100,15 +103,18 @@ xmlEventParse(
 tokens <- unname(tokens)
 ```
 
-
 ## Aufgaben für selbstständige Arbeit
 
 * Einen Dataframe mit dem Wort, Lemma und Wortart anlegen.
+ neuen vector f�r wortart angelegt und die datei nach ## Arbeit mit XML Dateien eingelesen
 
 * Daten alphabetisch nach dem Wort sortieren und in eine Datei speichern.
+Befehl --> df1[order(df1$tokens), ]
 
 * Durchschnittliche Länge der Substantive in Buchstaben berechnen.
+Befehl --> mean(subset(nchar(tokens), df1$wortart == "NN"))
 
 * Den Dataframe anpassen und die Verteilung von Substantiven nach dem Genus berechnen.
-
+Befehl --> sort(table(df1$genus))
 * Anzahl der autosemantischen Wörtern im Text berechnen.
+Befehl --> table(tokens %in% types)

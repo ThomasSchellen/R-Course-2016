@@ -222,14 +222,17 @@ df2[sample(length(df2$Klasse)), ]</code></pre>
 
 tokens &lt;- vector('character')
 types &lt;- vector('character')
+wortart &lt;- vector(&quot;character&quot;)
+genus &lt;- vector(&quot;character&quot;)
 
 xmlEventParse(
-  &quot;../data/t_990505_47.xml&quot;, 
+  &quot;U:/Eigene Dateien/R-Course-2016/data/t_990505_47.xml&quot;, 
   handlers = list(
     't' = function(name, attr) {
       tokens &lt;&lt;- c(tokens, attr['word'])
       types &lt;&lt;- c(types, attr['lemma'])
-      ## morphology
+      wortart &lt;&lt;- c(wortart, attr[&quot;pos&quot;])
+      genus &lt;&lt;- c(genus, attr[&quot;morph&quot;])
       }
     ),
   addContext = FALSE
@@ -241,9 +244,9 @@ tokens &lt;- unname(tokens)</code></pre>
 <div id="aufgaben-far-selbststandige-arbeit" class="section level2">
 <h2>Aufgaben fÃ¼r selbststÃ¤ndige Arbeit</h2>
 <ul>
-<li><p>Einen Dataframe mit dem Wort, Lemma und Wortart anlegen.</p></li>
-<li><p>Daten alphabetisch nach dem Wort sortieren und in eine Datei speichern.</p></li>
-<li><p>Durchschnittliche LÃ¤nge der Substantive in Buchstaben berechnen.</p></li>
+<li><p>Einen Dataframe mit dem Wort, Lemma und Wortart anlegen. neuen vector für wortart angelegt und die datei nach ## Arbeit mit XML Dateien eingelesen</p></li>
+<li><p>Daten alphabetisch nach dem Wort sortieren und in eine Datei speichern. Befehl –&gt; df1[order(df1$tokens), ]</p></li>
+<li><p>Durchschnittliche LÃ¤nge der Substantive in Buchstaben berechnen. Befehl –&gt; mean(subset(nchar(tokens), df1$wortart == “NN”))</p></li>
 <li><p>Den Dataframe anpassen und die Verteilung von Substantiven nach dem Genus berechnen.</p></li>
 <li><p>Anzahl der autosemantischen WÃ¶rtern im Text berechnen.</p></li>
 </ul>
