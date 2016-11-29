@@ -1,3 +1,5 @@
 *_cache
 *_files
-*.html*.pdf
+
+*.html
+*.pdf
