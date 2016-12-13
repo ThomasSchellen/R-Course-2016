@@ -52,12 +52,19 @@ v15 <- seq(1, 100)
 v16 <- vector(mode = 'numeric', 100)
 v17 <- seq_along(v16)
 v17
+<<<<<<< HEAD
 
 ```
 
 
 
+=======
+```
+
+
+>>>>>>> e96b14432915588a002e2a95dfd7bf85a12b6f29
 ```{r ordering, echo = TRUE}
+
 df2[order(df2$TokenFrequenz), ]
 ```
 
