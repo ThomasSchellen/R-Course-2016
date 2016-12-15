@@ -5,7 +5,7 @@
 kursA <- rep(1:6, 1:6)
 kursB <- rep(seq(1,12,by=2), 1:6)
 kursA; kursB
-z.A <- (kursA - mean(kursA))/sd(kursA)
+z.A <- (kursA - mean(kursA))/sd(kursA)ls()
 z.B <- (kursB - mean(kursB))/sd(kursB)
 scale(kursA)
 scale(kursB)
